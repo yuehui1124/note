@@ -13,6 +13,7 @@
         <module name="power" />
         <module name="power1" />
         <module name="user" />
+        <module name="zuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -34,6 +35,7 @@
       <module name="power1" options="-parameters" />
       <module name="test" options="-parameters" />
       <module name="user" options="-parameters" />
+      <module name="zuul" options="-parameters" />
     </option>
   </component>
 </project>

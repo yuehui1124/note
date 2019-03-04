@@ -10,7 +10,7 @@ import java.util.Map;
 @RestController
 public class PowerController {
 
-    @RequestMapping("getPower.do")
+    @RequestMapping("/getPower.do")
     public Map getPower(){
         HashMap map = new HashMap(6);
         map.put("nicai","wobucai");

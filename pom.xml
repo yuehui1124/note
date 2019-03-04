@@ -23,6 +23,7 @@
         <module>eureka3002</module>
         <module>power-1</module>
         <module>laoy-order</module>
+        <module>zuul</module>
     </modules>
 
     <dependencies>

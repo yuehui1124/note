@@ -1,6 +1,7 @@
 package com.laoy.controller;
 
 
+import com.laoy.service.PowerFeignService;
 import com.laoy.util.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,15 @@ public class UserController {
 
     @Autowired
     RestTemplate restTemplate;
+    @Autowired
+    private PowerFeignService powerFeignService;
+//
+    //public void setPowerFeignService(PowerFeignService powerFeignService) {
+    //    this.powerFeignService = powerFeignService;
+    //}
 
+
+    private static final String POWER ="http://SERVER-POWER";
 
     @RequestMapping("/getUser.do")
     public R getUser(){
@@ -27,9 +36,19 @@ public class UserController {
     }
 
 
-    @RequestMapping("/getPower.do")
-    public R getPower(){
-        return R.success("操作成功",restTemplate.getForObject("http://localhost:80/getPower.do",Object.class));
+    //@RequestMapping("/getPower.do")
+    //public R getPower(){
+    //    return R.success("操作成功",restTemplate.getForObject("http://localhost:80/getPower.do",Object.class));
+    //}
+
+    /**
+     * 测试接口
+     * @return
+     */
+    @RequestMapping("/getFeignPower.do")
+    public R getFeignPower(){
+        return R.success("操作成功",powerFeignService.getPower()) ;
+
     }
 
 }
